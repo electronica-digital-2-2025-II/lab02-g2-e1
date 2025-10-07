@@ -6,8 +6,7 @@ module mult(
     output reg [7:0] result,
     output reg done
 );
-
-    // Estados de la máquina de estados
+    
     parameter star   = 3'b000;
     parameter check  = 3'b001;
     parameter add    = 3'b010;
@@ -18,7 +17,6 @@ module mult(
     reg [7:0] pp;
     reg [7:0] a_copy, b_copy;
 
-    // 1. FSM: transición de estado
     always @(posedge clk) begin
         if (init)
             state <= star;
@@ -26,7 +24,6 @@ module mult(
             state <= next_state;
     end
 
-    // 2. Lógica combinacional para determinar el siguiente estado
     always @(*) begin
         case(state)
             star:   next_state = check;
@@ -37,21 +34,19 @@ module mult(
             default:next_state = star;
         endcase
     end
-
-    // 3. Lógica secuencial: operaciones y salidas
+    
     always @(posedge clk) begin
         if (init) begin
-            // Reset de registros al iniciar una nueva multiplicación
             pp      <= 6'b0;
-            a_copy  <= {4'b0000, a};  // Extensión a 6 bits
-            b_copy  <= {4'b0000, b};  // Extensión a 6 bits
+            a_copy  <= {4'b0000, a};  
+            b_copy  <= {4'b0000, b}; 
             result  <= 6'b0;
             done    <= 1'b0;
         end else begin
             case(state)
                 star: begin
                     pp     <= 6'b0;
-                    a_copy <= {3'b000, a};  // Guardamos copia extendida
+                    a_copy <= {3'b000, a}; 
                     b_copy <= {3'b000, b};
                     done   <= 1'b0;
                 end
