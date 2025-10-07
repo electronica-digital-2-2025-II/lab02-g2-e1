@@ -1,0 +1,473 @@
+$date
+	Tue Oct  7 01:34:33 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module alu_tb $end
+$var wire 7 ! result [6:0] $end
+$var wire 1 " overflow $end
+$var wire 1 # done $end
+$var wire 1 $ carry $end
+$var reg 4 % a [3:0] $end
+$var reg 4 & b [3:0] $end
+$var reg 1 ' cin $end
+$var reg 1 ( clk $end
+$var reg 1 ) init $end
+$var reg 3 * op [2:0] $end
+$scope module dut $end
+$var wire 4 + a [3:0] $end
+$var wire 4 , b [3:0] $end
+$var wire 1 ' cin $end
+$var wire 1 ( clk $end
+$var wire 1 ) init $end
+$var wire 3 - op [2:0] $end
+$var wire 7 . sum_result [6:0] $end
+$var wire 4 / sum_ [3:0] $end
+$var wire 8 0 mul_result [7:0] $end
+$var wire 1 1 done_ $end
+$var wire 1 2 carry_ $end
+$var reg 1 $ carry $end
+$var reg 1 # done $end
+$var reg 1 " overflow $end
+$var reg 7 3 result [6:0] $end
+$scope module mul $end
+$var wire 4 4 a [3:0] $end
+$var wire 4 5 b [3:0] $end
+$var wire 1 ( clk $end
+$var wire 1 ) init $end
+$var parameter 3 6 add $end
+$var parameter 3 7 check $end
+$var parameter 3 8 finish $end
+$var parameter 3 9 shift $end
+$var parameter 3 : star $end
+$var reg 8 ; a_copy [7:0] $end
+$var reg 8 < b_copy [7:0] $end
+$var reg 1 1 done $end
+$var reg 3 = next_state [2:0] $end
+$var reg 8 > pp [7:0] $end
+$var reg 8 ? result [7:0] $end
+$var reg 3 @ state [2:0] $end
+$upscope $end
+$scope module sum $end
+$var wire 4 A a [3:0] $end
+$var wire 4 B b [3:0] $end
+$var wire 1 ' cin $end
+$var wire 1 C clk $end
+$var wire 1 D in0 $end
+$var wire 1 E in1 $end
+$var wire 1 F in2 $end
+$var wire 1 G in3 $end
+$var wire 4 H sum [3:0] $end
+$var wire 1 I carry2 $end
+$var wire 1 J carry1 $end
+$var wire 1 K carry0 $end
+$var wire 1 2 carry $end
+$scope module ad0 $end
+$var wire 1 L a $end
+$var wire 1 M ab_xor $end
+$var wire 1 N and1 $end
+$var wire 1 O and2 $end
+$var wire 1 D b $end
+$var wire 1 K carry $end
+$var wire 1 ' cin $end
+$var wire 1 P sum $end
+$upscope $end
+$scope module ad1 $end
+$var wire 1 Q a $end
+$var wire 1 R ab_xor $end
+$var wire 1 S and1 $end
+$var wire 1 T and2 $end
+$var wire 1 E b $end
+$var wire 1 J carry $end
+$var wire 1 K cin $end
+$var wire 1 U sum $end
+$upscope $end
+$scope module ad2 $end
+$var wire 1 V a $end
+$var wire 1 W ab_xor $end
+$var wire 1 X and1 $end
+$var wire 1 Y and2 $end
+$var wire 1 F b $end
+$var wire 1 I carry $end
+$var wire 1 J cin $end
+$var wire 1 Z sum $end
+$upscope $end
+$scope module ad3 $end
+$var wire 1 [ a $end
+$var wire 1 \ ab_xor $end
+$var wire 1 ] and1 $end
+$var wire 1 ^ and2 $end
+$var wire 1 G b $end
+$var wire 1 2 carry $end
+$var wire 1 I cin $end
+$var wire 1 _ sum $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b0 :
+b11 9
+b100 8
+b1 7
+b10 6
+$end
+#0
+$dumpvars
+0_
+0^
+0]
+0\
+0[
+0Z
+0Y
+0X
+0W
+0V
+0U
+0T
+0S
+0R
+0Q
+0P
+0O
+0N
+0M
+0L
+0K
+0J
+0I
+b0 H
+0G
+0F
+0E
+0D
+zC
+b0 B
+b0 A
+bx @
+bx ?
+bx >
+bx =
+bx <
+bx ;
+b0 5
+b0 4
+bx 3
+02
+x1
+bx 0
+b0 /
+b0 .
+b0 -
+b0 ,
+b0 +
+b0 *
+1)
+0(
+0'
+b0 &
+b0 %
+x$
+x#
+x"
+bx !
+$end
+#5000
+b1 =
+b0 @
+01
+b0 0
+b0 ?
+b0 <
+b0 ;
+b0 >
+0$
+0#
+0"
+b0 !
+b0 3
+1(
+#10000
+1P
+12
+1M
+1]
+b1 .
+b1 /
+b1 H
+0_
+1D
+1G
+0\
+1[
+0(
+b1 *
+b1 -
+b1001 &
+b1001 ,
+b1001 5
+b1001 B
+b1000 %
+b1000 +
+b1000 4
+b1000 A
+#15000
+b1001 <
+b1000 ;
+1(
+#20000
+0(
+#25000
+1(
+#30000
+1_
+1J
+1I
+1S
+1X
+0P
+1K
+1U
+b1110 .
+b1110 /
+b1110 H
+1Z
+1E
+1F
+0M
+1N
+0R
+0W
+1L
+1Q
+1V
+0(
+b1111 &
+b1111 ,
+b1111 5
+b1111 B
+b1111 %
+b1111 +
+b1111 4
+b1111 A
+#35000
+b1111 <
+b1111 ;
+1(
+#40000
+0(
+b10 *
+b10 -
+0)
+#45000
+b10 =
+b1 @
+1(
+#50000
+0(
+#55000
+b11 =
+b10 @
+1(
+#60000
+0(
+#65000
+b1 =
+b11 @
+b1111 >
+1(
+#70000
+0(
+#75000
+b10 =
+b111 <
+b11110 ;
+b1 @
+1(
+#80000
+0(
+#85000
+b11 =
+b10 @
+1(
+#90000
+0(
+#95000
+b1 =
+b101101 >
+b11 @
+1(
+#100000
+0(
+#105000
+b10 =
+b1 @
+b11 <
+b111100 ;
+1(
+#110000
+0(
+#115000
+b11 =
+b10 @
+1(
+#120000
+0(
+#125000
+b1 =
+b11 @
+b1101001 >
+1(
+#130000
+0(
+#135000
+b10 =
+b1 <
+b1111000 ;
+b1 @
+1(
+#140000
+0(
+#145000
+b11 =
+b10 @
+1(
+#150000
+0(
+#155000
+b1 =
+b11100001 >
+b11 @
+1(
+#160000
+0(
+#165000
+b11 =
+b1 @
+b0 <
+b11110000 ;
+1(
+#170000
+0(
+#175000
+b100 =
+b11 @
+1(
+#180000
+0(
+#185000
+b100 @
+b11100000 ;
+1(
+#190000
+0(
+#195000
+11
+b11100001 0
+b11100001 ?
+1(
+#200000
+0(
+#205000
+1#
+b1100001 !
+b1100001 3
+1"
+1(
+#210000
+0(
+#215000
+1(
+#220000
+0(
+#225000
+1$
+0"
+b1110 !
+b1110 3
+0_
+1P
+0K
+0U
+0T
+0J
+b1 .
+b1 /
+b1 H
+0Z
+0Y
+0I
+0E
+0F
+1M
+0N
+0R
+0S
+0W
+0X
+0L
+0Q
+0V
+1(
+b1 *
+b1 -
+b1001 &
+b1001 ,
+b1001 5
+b1001 B
+b1000 %
+b1000 +
+b1000 4
+b1000 A
+#230000
+0(
+#235000
+b1 !
+b1 3
+1(
+#240000
+0(
+#245000
+b0 !
+b0 3
+1Z
+1J
+1T
+1R
+1K
+0M
+1N
+1E
+b101 .
+b101 /
+b101 H
+1P
+0O
+1L
+1(
+1'
+b100 &
+b100 ,
+b100 5
+b100 B
+b1001 %
+b1001 +
+b1001 4
+b1001 A
+#250000
+0(
+#255000
+b101 !
+b101 3
+1(
+#260000
+0(
+#265000
+1(
