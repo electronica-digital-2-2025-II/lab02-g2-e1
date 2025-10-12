@@ -31,6 +31,7 @@ a. **Simulación: Suma (Carry Out)**
 </p> 
 
 En esta primera sección del testbench, se observa que, todas las entradas se encuentran en 0 (A, B, OP, etc), además de que las salidas no cuentan con un valor definido, esto durante el primer ciclo de reloj. 
+
 Luego, se seleccionó la operación **Suma** ($\text{C}_{\text{in}}$ = 0, OP = 001), entre A = 8 (1000) y B = 9 (1001). Se obtuvo un resultado de 10001, correspondiente al número 17 en formato binario, además de obtener salida de nivel lógico alto para **Carry**, dado que el resultado es de 5 bits y las entradas son de 4 bits, es decir que la la operación se realizó correctamente. 
 
 Adicionalmente, las salidas DONE, OVERFLOW Y ZERO  se mantuvieron con un valor lógico de cero, ya que estas no se encuentran dispobiles al realizar la suma (ZERO se activa mientras se realiza la operación pero una vez se tiene el resultado vuelve a ser cero).
@@ -52,6 +53,7 @@ c. Simulación: Suma y Resta
 </p> 
 
 Luego, se verificó nuevamente el comportamiento de la **Suma** al estar precedida por la multiplicación, en donde al adicionar A = 12 (1100) con B = 13 (1101), se obteiene un 25 (11001) de forma inmediata al seleccionar la operación con OP  = 001, ya que la suma en es netamente combinacional en la ALU implementada. 
+
 Para la **Resta**, simplemente se cambió el valor de $\text{C}_{\text{in}}$ de 0 a 1, en donde se restó 9 (1001) y 4 (0100), consiguiendo un resultado de 5 (0101), como debe ser.
 
 d. Simulación: Operación lógica (AND), Desplazamiento y Multiplicación (Bandera "Zero")
@@ -60,6 +62,7 @@ d. Simulación: Operación lógica (AND), Desplazamiento y Multiplicación (Band
 </p> 
 
 Consecutivamente, se probó el funcionamiento de la operación AND (OP = 111), en donde, al tener entradas de 1011 y 1110 para A y B, respectivamente, la salida corresponde a 1010, siendo coherente con el comportamiento esperado.
+
 Por otro lado, para la operación Desplazamiento (OP = 011), se desplazó hacia la izquierda 1011 (A) una cantidad de 8 veces (1000 en B). Esto generó que la salida fuera cero, ya que, al tener una salida de 8 bits y desplazarse esa misma cantidad de veces, no hay posibilidad de que permanezca algún número distinto de cero. 
 
 Esto último causó que la bandera de **ZERO** se activara, siguiendo el comportamiento requerido.
@@ -79,6 +82,7 @@ f. Simulación: Multiplicación (Sin Overflow)
 </p> 
 
 A continuación, se verificó el comportamiento de la bandera de **Overflow** para asegurar que respondiera correctamente ante los límites de operación. Teóricamente, el valor máximo que puede representarse sin activar esta bandera es 127 (1111111). 
+
 Por ello, se realizó la operación 12 × 10, obteniendo un resultado cercano pero inferior a 127, lo que impidió la activación de Overflow.
 
 f. Simulación: Multiplicación (Con Overflow) y desplazamiento
@@ -87,12 +91,13 @@ f. Simulación: Multiplicación (Con Overflow) y desplazamiento
 </p> 
 
 Posteriormente, al efectuar la operación 13 × 10, la bandera de Overflow se activó, en contraste con el caso anterior, confirmando así que su funcionamiento es el esperado.
+
 Finalmente, se muestra el desplazamiento del número binario 1011, una cantidad de 3 veces (0011 en B), presentando una salida de 101100. Así, se concluyó que cada una de las salidas se comporta correctamente acorde a las entradas y la operación seleccionada por el usuario.
 
 ## Implementación
 
 <p align="center">
-<img width="1000" height="1500" alt="Circuito" src="https://github.com/user-attachments/assets/e3aed127-1049-4b81-ae1a-627e4cc47ca8" />
+<img width="400" height="750" alt="Circuito" src="https://github.com/user-attachments/assets/e3aed127-1049-4b81-ae1a-627e4cc47ca8" />
 </p> 
 
 Para acceder a la explicación del [funcionamiento de la Unidad Aritmético-Lógica](https://www.youtube.com/watch?v=V0nhHHJUcUA) en YouTube, haga clic en el siguiente enlace en la miniatura del video:
