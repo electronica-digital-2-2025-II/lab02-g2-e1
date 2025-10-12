@@ -40,35 +40,46 @@ b. Simulación: Multiplicación (Con Overflow)
 <img width="1629" height="312" alt="SImulacion2" src="https://github.com/user-attachments/assets/bf417acd-6f8d-45a8-8e2d-175944c11a0f" />
 </p> 
 
-Posteriormente, se muestra la Multiplicación (OP = 010), en donde, al asignar INIT = 1, se fija un valor de 0 para las salidas de resultado, carry, zero y overflow. La multiplicación máxima que puede realizarse con las entradas de 4 bits es 15 × 15 (1111 tanto en A como en B), cuyo resultado normal sería 225 (11100001 en binario). Sin embargo, al tener una salida de máximo 7 bits, esta no puede ser representada correctamente por la ALU, por lo que el resultado obtenido es 11100001, junto con la activación de la bandera de Overflow. Sin embargo, si se toma este bit de Overflow como el MSB de la salida, esta corresponderia a 225, tal como se esperaba. Es importante mencionar que, una vez obtenido el resultado, también se desactivó el Zero y se activó el Done.
+Posteriormente, se muestra la Multiplicación (OP = 010), en donde, al asignar INIT = 1, se fija un valor de 0 para las salidas de resultado, carry, zero y overflow. La multiplicación máxima que puede realizarse con las entradas de 4 bits es 15 × 15 (1111 tanto en A como en B), cuyo resultado normal sería 225 (11100001 en binario). 
+
+Sin embargo, al tener una salida de máximo 7 bits, esta no puede ser representada correctamente por la ALU, por lo que el resultado obtenido es 11100001, junto con la activación de la bandera de Overflow. Aún así, si se toma este bit de Overflow como el MSB de la salida, esta corresponderia a 225, tal como se esperaba. 
+
+Es importante mencionar que, una vez obtenido el resultado, también se desactivó el Zero y se activó el Done.
 
 c. Simulación: Suma y Resta
 <p align="center">
 <img width="1473" height="313" alt="SImulacion3" src="https://github.com/user-attachments/assets/d1d36d16-007d-42f8-85ee-0dc350825ed0" />
 </p> 
 
-Luego, se verificó nuevamente el comportamiento de la **Suma** al estar precedida por la multiplicación, en donde al adicionar A = 12 (1100) con B = 13 (1101), se obteiene un 25 (11001) de forma inmediata al seleccionar la operación con OP  = 001, ya que la suma en es netamente combinacional en la ALU implementada. Para la **Resta**, simplemente se cambió el valor de $\text{C}_{\text{in}}$ de 0 a 1, en donde se restó 9 (1001) y 4 (0100), consiguiendo un resultado de 5 (0101), como debe ser.
+Luego, se verificó nuevamente el comportamiento de la **Suma** al estar precedida por la multiplicación, en donde al adicionar A = 12 (1100) con B = 13 (1101), se obteiene un 25 (11001) de forma inmediata al seleccionar la operación con OP  = 001, ya que la suma en es netamente combinacional en la ALU implementada. 
+Para la **Resta**, simplemente se cambió el valor de $\text{C}_{\text{in}}$ de 0 a 1, en donde se restó 9 (1001) y 4 (0100), consiguiendo un resultado de 5 (0101), como debe ser.
 
 d. Simulación: Operación lógica (AND), Desplazamiento y Multiplicación (Bandera "Zero")
 <p align="center">
 <img width="1644" height="309" alt="SImulacion4" src="https://github.com/user-attachments/assets/b01a274d-1df1-4de8-a631-d455abf3f205" />
 </p> 
 
-Consecutivamente, se probó el funcionamiento de la operación AND (OP = 111), en donde, al tener entradas de 1011 y 1110 para A y B, respectivamente, la salida corresponde a 1010, siendo coherente con el comportamiento esperado. Por otro lado, para la operación Desplazamiento (OP = 011), se desplazó hacia la izquierda 1011 (A) una cantidad de 8 veces (1000 en B). Esto generó que la salida fuera cero, ya que, al tener una salida de 8 bits y desplazarse esa misma cantidad de veces, no hay posibilidad de que permanezca algún número distinto de cero. Esto último causó que la bandera de **ZERO** se activara, siguiendo el comportamiento requerido.
+Consecutivamente, se probó el funcionamiento de la operación AND (OP = 111), en donde, al tener entradas de 1011 y 1110 para A y B, respectivamente, la salida corresponde a 1010, siendo coherente con el comportamiento esperado.
+Por otro lado, para la operación Desplazamiento (OP = 011), se desplazó hacia la izquierda 1011 (A) una cantidad de 8 veces (1000 en B). Esto generó que la salida fuera cero, ya que, al tener una salida de 8 bits y desplazarse esa misma cantidad de veces, no hay posibilidad de que permanezca algún número distinto de cero. 
+
+Esto último causó que la bandera de **ZERO** se activara, siguiendo el comportamiento requerido.
 
 e. Simulación: Resta (Resultado negativo) y Operación lógica (AND)
 <p align="center">
 <img width="1644" height="317" alt="SImulacion5" src="https://github.com/user-attachments/assets/a4d26578-7974-4c93-ab99-59f9981a2e9e" />
 </p> 
 
-Luego, se verificó el funcionamiento de la ALU al realizar una resta cuyo resultado fuera un **número negativo** en formato decimal. En este caso, al restar 0010 (2) de 0011 (3), el resultado obtenido es 1111. Esto ocurre porque la salida se encuentra representada en complemento a dos, ya que corresponde a un número negativo. Si no se analiza este comportamiento con detalle, podría parecer que la ALU presenta fallos en la operación de resta. Adicionalmente, se ejecutó la operación **AND** entre 1010 y 0101, obteniendo como resultado 0000 y, por tanto, activando la bandera de **Zero**, tal como se planteó en el diseño de la ALU.
+Luego, se verificó el funcionamiento de la ALU al realizar una resta cuyo resultado fuera un **número negativo** en formato decimal. En este caso, al restar 0010 (2) de 0011 (3), el resultado obtenido es 1111. Esto ocurre porque la salida se encuentra representada en complemento a dos, ya que corresponde a un número negativo.
+
+Si no se analiza este comportamiento con detalle, podría parecer que la ALU presenta fallos en la operación de resta. Adicionalmente, se ejecutó la operación **AND** entre 1010 y 0101, obteniendo como resultado 0000 y, por tanto, activando la bandera de **Zero**, tal como se planteó en el diseño de la ALU.
 
 f. Simulación: Multiplicación (Sin Overflow)
 <p align="center">
 <img width="1636" height="318" alt="SImulacion6" src="https://github.com/user-attachments/assets/b6f9198d-b34c-43fc-b8ad-88f471e6c23f" />
 </p> 
 
-A continuación, se verificó el comportamiento de la bandera de **Overflow** para asegurar que respondiera correctamente ante los límites de operación. Teóricamente, el valor máximo que puede representarse sin activar esta bandera es 127 (1111111). Por ello, se realizó la operación 12 × 10, obteniendo un resultado cercano pero inferior a 127, lo que impidió la activación de Overflow.
+A continuación, se verificó el comportamiento de la bandera de **Overflow** para asegurar que respondiera correctamente ante los límites de operación. Teóricamente, el valor máximo que puede representarse sin activar esta bandera es 127 (1111111). 
+Por ello, se realizó la operación 12 × 10, obteniendo un resultado cercano pero inferior a 127, lo que impidió la activación de Overflow.
 
 f. Simulación: Multiplicación (Con Overflow) y desplazamiento
 <p align="center">
@@ -81,7 +92,7 @@ Finalmente, se muestra el desplazamiento del número binario 1011, una cantidad 
 ## Implementación
 
 <p align="center">
-<img width="3120" height="4160" alt="Circuito" src="https://github.com/user-attachments/assets/e3aed127-1049-4b81-ae1a-627e4cc47ca8" />
+<img width="1000" height="1500" alt="Circuito" src="https://github.com/user-attachments/assets/e3aed127-1049-4b81-ae1a-627e4cc47ca8" />
 </p> 
 
 Para acceder a la explicación del [funcionamiento de la Unidad Aritmético-Lógica](https://www.youtube.com/watch?v=V0nhHHJUcUA) en YouTube, haga clic en el siguiente enlace en la miniatura del video:
