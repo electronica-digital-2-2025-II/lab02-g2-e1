@@ -46,8 +46,8 @@ module mult(
             case(state)
                 star: begin
                     pp     <= 8'b0;
-                    a_copy <= {4'b000, a}; 
-                    b_copy <= {4'b000, b};
+                    a_copy <= {4'b0000, a}; 
+                    b_copy <= {4'b0000, b};
                     done   <= 1'b0;
                 end
 
