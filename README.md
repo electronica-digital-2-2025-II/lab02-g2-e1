@@ -22,8 +22,14 @@ Indice:
 
 ## Simulaciones 
 
+Las simulaciones realizadas se presentan en las siguientes imagenes, en donde a través de GTKWave evidencia el comportamiento de la de las distintas operaciones de la ALU con el respectivo [testbench](scr/alu_tb.v).
+
+
+
 <p align="center">
 <img width="1635" height="305" alt="SImulacion1" src="https://github.com/user-attachments/assets/21e547e1-94cb-4cb8-9de6-f272c1f2ab58" />
+  <br>
+  <em>Figura 1. Simulación de la operación de suma.</em>
 </p> 
 
 <p align="center">
@@ -52,6 +58,18 @@ Indice:
 
 
 ## Implementación
+
+<p align="center">
+<img width="3120" height="4160" alt="Circuito" src="https://github.com/user-attachments/assets/e3aed127-1049-4b81-ae1a-627e4cc47ca8" />
+</p> 
+
+Para acceder a la explicación del [funcionamiento de la Unidad Aritmético-Lógica](https://www.youtube.com/watch?v=V0nhHHJUcUA) en YouTube, haga clic en el siguiente enlace en la miniatura del video:
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=V0nhHHJUcUA">
+    <img src="https://img.youtube.com/vi/V0nhHHJUcUA/0.jpg" alt="Ver video en YouTube">
+  </a>
+</p>
 
 ## Conclusiones
 
