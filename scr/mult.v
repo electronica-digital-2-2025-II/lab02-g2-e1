@@ -37,17 +37,17 @@ module mult(
     
     always @(posedge clk) begin
         if (init) begin
-            pp      <= 6'b0;
+            pp      <= 8'b0;
             a_copy  <= {4'b0000, a};  
             b_copy  <= {4'b0000, b}; 
-            result  <= 6'b0;
+            result  <= 8'b0;
             done    <= 1'b0;
         end else begin
             case(state)
                 star: begin
-                    pp     <= 6'b0;
-                    a_copy <= {3'b000, a}; 
-                    b_copy <= {3'b000, b};
+                    pp     <= 8'b0;
+                    a_copy <= {4'b000, a}; 
+                    b_copy <= {4'b000, b};
                     done   <= 1'b0;
                 end
 
