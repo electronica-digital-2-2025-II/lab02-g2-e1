@@ -19,6 +19,11 @@ Indice:
 ### Descripción
 
 ### Diagrama
+ ##Diagrama de flujo
+<p align="center">
+  <img width="843" height="831" alt="alu_flujo drawio" src="https://github.com/user-attachments/assets/8334eb81-f981-4fe3-8164-0b1635536980" />
+
+</p> 
 
 ## Simulaciones 
 
