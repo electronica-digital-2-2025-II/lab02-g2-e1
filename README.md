@@ -27,7 +27,6 @@ Indice:
 </p> 
  b. Tabla de operaciones
 
-<div align="center">
 | Número del selector | Operación realizada |
 |:----------:|:----------:|
 | 000     | Nada     |
@@ -35,7 +34,6 @@ Indice:
 | 010     | Multiplicación    |
 | 011     | Desplazamiento (Izquierda)     |
 | 111    | Operación lógica (AND)    |
-</div>
 
 ## Simulaciones 
 
