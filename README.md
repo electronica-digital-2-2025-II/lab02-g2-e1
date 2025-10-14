@@ -20,22 +20,22 @@ Indice:
 
 ### Diagrama
  a. Diagrama de flujo
+ 
 <p align="center">
 <img width="825" height="816" alt="Diagrama en blanco - Página 8" src="https://github.com/user-attachments/assets/85b08323-f523-465d-864d-41ae73bfeff6" />
 
 </p> 
  b. Tabla de operaciones
 
-<p align="center">
-  | Columna 1 | Columna 2 |
- |------------|------------|
- | Fila 1     | Dato 1     |
- | Fila 2     | Dato 2     |
- | Fila 3     | Dato 3     |
- | Fila 4     | Dato 4     |
- | Fila 5     | Dato 5     |
- | Fila 6     | Dato 6     |
-</p>
+<div align="center">
+| Número del selector | Operación realizada |
+|:----------:|:----------:|
+| 000     | Nada     |
+| 001    | Suma / Resta    |
+| 010     | Multiplicación    |
+| 011     | Desplazamiento (Izquierda)     |
+| 111    | Operación lógica (AND)    |
+</div>
 
 ## Simulaciones 
 
@@ -53,7 +53,7 @@ Luego, se seleccionó la operación **Suma** ($\text{C}_{\text{in}}$ = 0, OP = 0
 
 Adicionalmente, las salidas DONE, OVERFLOW Y ZERO  se mantuvieron con un valor lógico de cero, ya que estas no se encuentran dispobiles al realizar la suma (ZERO se activa mientras se realiza la operación pero una vez se tiene el resultado vuelve a ser cero).
 
-b. Simulación: Multiplicación (Con Overflow)
+b. **Simulación: Multiplicación (Con Overflow)**
 <p align="center">
 <img width="1629" height="312" alt="SImulacion2" src="https://github.com/user-attachments/assets/bf417acd-6f8d-45a8-8e2d-175944c11a0f" />
 </p> 
@@ -64,7 +64,7 @@ Sin embargo, al tener una salida de máximo 7 bits, esta no puede ser representa
 
 Es importante mencionar que, una vez obtenido el resultado, también se desactivó el Zero y se activó el Done.
 
-c. Simulación: Suma y Resta
+c. **Simulación: Suma y Resta**
 <p align="center">
 <img width="1473" height="313" alt="SImulacion3" src="https://github.com/user-attachments/assets/d1d36d16-007d-42f8-85ee-0dc350825ed0" />
 </p> 
@@ -73,7 +73,7 @@ Luego, se verificó nuevamente el comportamiento de la **Suma** al estar precedi
 
 Para la **Resta**, simplemente se cambió el valor de $\text{C}_{\text{in}}$ de 0 a 1, en donde se restó 9 (1001) y 4 (0100), consiguiendo un resultado de 5 (0101), como debe ser.
 
-d. Simulación: Operación lógica (AND), Desplazamiento y Multiplicación (Bandera "Zero")
+d. **Simulación: Operación lógica (AND), Desplazamiento y Multiplicación (Bandera "Zero")**
 <p align="center">
 <img width="1644" height="309" alt="SImulacion4" src="https://github.com/user-attachments/assets/b01a274d-1df1-4de8-a631-d455abf3f205" />
 </p> 
@@ -84,7 +84,7 @@ Por otro lado, para la operación Desplazamiento (OP = 011), se desplazó hacia 
 
 Esto último causó que la bandera de **ZERO** se activara, siguiendo el comportamiento requerido.
 
-e. Simulación: Resta (Resultado negativo) y Operación lógica (AND)
+e. **Simulación: Resta (Resultado negativo) y Operación lógica (AND)**
 <p align="center">
 <img width="1644" height="317" alt="SImulacion5" src="https://github.com/user-attachments/assets/a4d26578-7974-4c93-ab99-59f9981a2e9e" />
 </p> 
@@ -93,7 +93,7 @@ Luego, se verificó el funcionamiento de la ALU al realizar una resta cuyo resul
 
 Si no se analiza este comportamiento con detalle, podría parecer que la ALU presenta fallos en la operación de resta. Adicionalmente, se ejecutó la operación **AND** entre 1010 y 0101, obteniendo como resultado 0000 y, por tanto, activando la bandera de **Zero**, tal como se planteó en el diseño de la ALU.
 
-f. Simulación: Multiplicación (Sin Overflow)
+f. **Simulación: Multiplicación (Sin Overflow)**
 <p align="center">
 <img width="1636" height="318" alt="SImulacion6" src="https://github.com/user-attachments/assets/b6f9198d-b34c-43fc-b8ad-88f471e6c23f" />
 </p> 
@@ -102,7 +102,7 @@ A continuación, se verificó el comportamiento de la bandera de **Overflow** pa
 
 Por ello, se realizó la operación 12 × 10, obteniendo un resultado cercano pero inferior a 127, lo que impidió la activación de Overflow.
 
-f. Simulación: Multiplicación (Con Overflow) y desplazamiento
+g. **Simulación: Multiplicación (Con Overflow) y desplazamiento**
 <p align="center">
 <img width="1636" height="315" alt="SImulacion7" src="https://github.com/user-attachments/assets/2c0b0f7d-80b9-4aab-a2e4-095acb9f5554" />
 </p> 
