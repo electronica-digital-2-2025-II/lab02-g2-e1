@@ -19,13 +19,14 @@ Indice:
 ### Descripción
 
 ### Diagrama
- ## Diagrama de flujo
+ a. Diagrama de flujo
 <p align="center">
 <img width="825" height="816" alt="Diagrama en blanco - Página 8" src="https://github.com/user-attachments/assets/85b08323-f523-465d-864d-41ae73bfeff6" />
 
 </p> 
- ## Tabla de operaciones
+ b. Tabla de operaciones
 
+<p align="center">
   | Columna 1 | Columna 2 |
  |------------|------------|
  | Fila 1     | Dato 1     |
@@ -34,7 +35,7 @@ Indice:
  | Fila 4     | Dato 4     |
  | Fila 5     | Dato 5     |
  | Fila 6     | Dato 6     |
-
+</p>
 
 ## Simulaciones 
 
