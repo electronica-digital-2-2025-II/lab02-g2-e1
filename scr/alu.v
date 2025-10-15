@@ -68,14 +68,18 @@ module alu(
             done = 1'b0;
 
             case (op)
+
                 3'b001: begin // Suma
                     if (cin) begin
                         temp_result = rest_result;
-                        carry = carry_;
-
+                        overflow    = 1'b0;
+                        carry       = carry_;
+                        done = 1'b1;
                     end else begin
                         temp_result = sum_result;
-                        carry = carry_;
+                        overflow    = 1'b0;
+                        carry       = carry_;
+                        done = 1'b1;
                     end
                 end
 
