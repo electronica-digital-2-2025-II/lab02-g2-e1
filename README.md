@@ -10,7 +10,6 @@ En este repositorio se presenta la información correspondiente al procedimiento
 - Daniel Sepúlveda Suárez <br> </br>
 - Juan Felipe Gaitán Nocua <br> </br>
 - Samuel Mahecha Arango <br> </br>
-
 # Informe
 
 Indice:
