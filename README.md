@@ -20,11 +20,11 @@ Indice:
 
 ### Diagrama
  a. Diagrama de flujo
- 
-<p align="center">
-<img width="825" height="816" alt="Diagrama en blanco - Página 8" src="https://github.com/user-attachments/assets/85b08323-f523-465d-864d-41ae73bfeff6" />
 
+<p align="center">
+<img width="830" height="830" alt="Diagrama en blanco - Página 9" src="https://github.com/user-attachments/assets/eb11dca6-9324-4535-bf58-7b140cd96080" />
 </p> 
+
  b. Tabla de operaciones
 
 | Número del selector | Operación realizada |
