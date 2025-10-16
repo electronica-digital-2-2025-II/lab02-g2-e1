@@ -156,14 +156,36 @@ Finalmente, se muestra el desplazamiento del número binario 1011, una cantidad 
 <img width="400" height="750" alt="Circuito" src="https://github.com/user-attachments/assets/e3aed127-1049-4b81-ae1a-627e4cc47ca8" />
 </p> 
 
-Para acceder a la explicación del [funcionamiento de la Unidad Aritmético-Lógica](https://www.youtube.com/watch?v=V0nhHHJUcUA) en YouTube, haga clic en el siguiente enlace en la miniatura del video:
+La implementacion fisica de la ALU con sus respectivas conexiones a los pines digitales de la Zybo Z7 puede apreciarse en la anterior imagen. Las entradas de A y B se indican por medio de dos grupos de 8 jumpers (ubicados en la partes superior derechga de la protoboard), en donde los primeros 4 (vistos de derecha a izquierda y empezando desde el LSB) corresponden a los 4 bits de A, los 4 que sigen a la izquierda corresponden a los 4 bits de B y el jumper que queda (el azul ubicado mas a la derecha) es el Carry In necesario para el Sumador/Restador. ES IMPORTANTE MENCIONAR que se forzaron directamente las salidas conectandolas al canal de 3.3V para representar la entrada "1" y al canal de GND para el "0"., esto por simplicidad y para evitar posibles problemas con los switches comerciales. Los 11 jumpers restantes que van de izquierda a derecha representan las salidas de la ALU.
+
+A continuacion se describira detalladamente la implemetancion de las salidas, las cuales son representadas mediante un conjunto de Leds (conectados a los cables de las salidas con su respectiva resistencia) con determinadas funciones: 
+
+- Los 7 primeros leds Azul/Transparente (ubicados en la parte inferior y vistos de derecha a izquierda empezando desde el LSB) representan el resultado/salida de la operacion inmediata y limitada en 7 bits. 
+- El led verde siguiente representa la señal de Done, la cual se activa en el momento en que se visualiza un resultado inmediato (Excepto en el estado incial).
+- El led Azul/Transparente siguiente representa la señal de Carry Out, que funciona solo para la suma y para la resta.
+- El led Azul/Difuso siguiente representa la señal de Zero, la cual se activa en el estado inicial (El resultado es cero), cuando se restan en A y B los mismos numeros y cuando se multiplica por cero.
+- El led Rojo/Difuso final representa la señal de Over Flow, la cual se activa cuando el resutlado de una Suma/Multiplicacion sobrepasa el limite de los 7 bits. 
+
+En la FPGA se hizo uso de los Switches (Sch=sw[1], Sch=sw[2] y Sch=sw[3]) para asignar las operaciones en una entrada de 3 bits, en la siguiente tabla se ecuentran determinadas las operaciones asignadas:
+
+- ### Tabla de operaciones 
+
+| Número del selector | Operación realizada |
+|:----------:|:----------:|
+| 000     | Nada     |
+| 001    | Suma (Cin = 0) / Resta (Cin = 1) |
+| 010     | Multiplicación    |
+| 011     | Desplazamiento (Izquierda)     |
+| 111    | Operación lógica (AND)    |
+
+Se ha hecho uso de uno de los botones de la FPGA (Sch=btn[3]) para activar la señal de INIT que se requiere para ejecutar la multiplicacion entre en numero de A y de B. En el caso de la operacion de desplazamiento, A tiene asignado el numero y B la cantidad de bits que se desplaza (desplazamiento hacia la izquierda), si dicha cantidad de bits de desplazamiento supera la cantidad de bits de resultado/salida (Los 7 leds Azul/Transparente), simplemente no se podra ver el resultado por lo que todos los leds permaneceran apagados.
+
+
+Para acceder a la explicación del [funcionamiento de la Unidad Aritmético-Lógica](https://www.youtube.com/watch?v=Qb5SZ17YCY4) en YouTube, haga clic en el siguiente enlace en la miniatura del video:
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=V0nhHHJUcUA">
-    <img src="https://img.youtube.com/vi/V0nhHHJUcUA/0.jpg" alt="Ver video en YouTube">
-  </a>
-</p>
-
+  <a href="https://www.youtube.com/watch?v=Qb5SZ17YCY4">
+	
 ## Conclusiones
 
 - La implementación de la Unidad Aritmético-Lógica (ALU) permitió comprender de forma práctica cómo se integran distintos módulos combinacionales y secuenciales dentro de un sistema digital complejo, reforzando los conceptos de diseño modular y jerárquico en Verilog.
