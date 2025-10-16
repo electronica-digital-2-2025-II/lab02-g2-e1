@@ -24,7 +24,14 @@ Indice:
 
 ### Descripción
 
-Una ALU (Arithmetic/Logic Unit) es un bloque fundamental de los sistemas digitales que realiza operaciones aritméticas y lógicas sobre datos binarios. Combina funciones como suma, resta, operaciones lógicas (AND, OR, NOT, entre otras), comparaciones y desplazamientos, controladas por una señal de control que indica qué operación ejecutar. Recibe dos entradas de N bits (A y B), junto con señales de control que determinan la función a realizar, y produce una salida Y también de N bits, además de posibles señales adicionales como Cout (acarreo) o **banderas de estado** (flags), que proporcionan información adicional sobre el resultado. Por ejemplo, una bandera de **overflow** flag indica que ocurrió un desbordamiento en la operación aritmética, mientras que una bandera de **zero** señala que el resultado obtenido fue cero. [1]
+Una ALU (Unidad Aritmético-Lógica) es un bloque fundamental de los sistemas digitales que realiza operaciones aritméticas y lógicas sobre datos binarios. Combina funciones como suma, resta, operaciones lógicas (AND, OR, NOT, entre otras), comparaciones y desplazamientos, controladas por una señal de control que indica qué operación ejecutar. Recibe dos entradas de N bits (A y B), junto con señales de control que determinan la función a realizar, y produce una salida Y también de N bits, además de posibles señales adicionales como Cout (acarreo) o **banderas de estado** (flags), que proporcionan información adicional sobre el resultado. Por ejemplo, una bandera de **overflow** flag indica que ocurrió un desbordamiento en la operación aritmética, mientras que una bandera de **zero** señala que el resultado obtenido fue cero. [1]
+
+Con respecto a la ALU implementada en la práctica, esta cuenta con cinco operaciones posibles: **suma**, **resta**, **multiplicación**, **desplazamiento** (a la izquierda) y la operación lógica **AND**. En la siguiente sección se profundizará en la codificación de estas operaciones según el selector de un multiplexor de 3 bits de entrada.
+
+Las entradas de la ALU corresponden a los dos números a operar, **A** y **B**, cada uno de 4 bits, un **selector** de 3 bits para determinar la operación a realizar, un bit de **init**, que cumple la función de reset y además inicia el algoritmo de multiplicación, y un **carry in**, encargado de controlar si se realiza una suma o una resta mediante el full adder.
+
+En cuanto a las salidas, se tienen 7 bits destinados a presentar el **resultado** de la operación, un bit de **carry out** (empleado cuando el resultado de una suma requiere más de 4 bits), un bit de **overflow** (para indicar que el resultado de la multiplicación excede los 7 bits disponibles), y un bit para la bandera **zero**, que se activa cuando el resultado es cero. Esta bandera también se activa cuando no se selecciona ninguna operación, es decir, cuando el selector no corresponde a ninguna de las operaciones codificadas, permitiendo así indicar al usuario que debe elegir una operación válida. Finalmente, se añadió una salida **done**, que señala que la operación seleccionada por el usuario ha finalizado correctamente.
+
 
 ### Diagrama
  a. Diagrama de flujo
@@ -38,7 +45,7 @@ Una ALU (Arithmetic/Logic Unit) es un bloque fundamental de los sistemas digital
 | Número del selector | Operación realizada |
 |:----------:|:----------:|
 | 000     | Nada     |
-| 001    | Suma / Resta    |
+| 001    | Suma (Cin = 0) / Resta (Cin = 1) |
 | 010     | Multiplicación    |
 | 011     | Desplazamiento (Izquierda)     |
 | 111    | Operación lógica (AND)    |
