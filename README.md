@@ -62,7 +62,7 @@ La tabla a continuación muestra la operación realizada a través de la Unidad 
 
 <div align="center">
 
-| Número del selector | Operación realizada |
+| **Número del selector** | **Operación realizada** |
 |:----------:|:----------:|
 | 000, 100, 101, 110     | Nada     |
 | 001    | Suma (Cin = 0) / Resta (Cin = 1) |
@@ -73,6 +73,8 @@ La tabla a continuación muestra la operación realizada a través de la Unidad 
 </div>
 
  - ### Diagrama de caja negra (RTL)
+
+El diagrama RTL presentado a continuación muestra de manera general la interconexión entre los distintos módulos que componen el diseño. En él se pueden observar claramente las entradas y salidas principales del sistema, así como la forma en que se obtiene el resultado final mediante el uso de un multiplexor:
 
 ## Simulaciones 
 
