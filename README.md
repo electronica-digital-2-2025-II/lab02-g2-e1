@@ -48,11 +48,17 @@ a. __Suma/Resta (001):__ Cuando el selector de operación cumpla *op = 001*, el 
 
 Posteriormente, se verificará el valor de *Cin*, ya que de él depende si se realiza una suma (Cin = 0) o una resta (Cin = 1). Una vez completada la operación, se comprobará si todos los bits del registro *result* son cero para activar la bandera *zero* (result = 0). Además, si durante la suma el quinto bit del resultado es 1, deberá activarse la salida *carry out*. Finalmente, al obtener el resultado correcto en su registro correspondiente, se asignará un valor alto a la señal *done* para indicar la finalización del proceso.
 
-a. __Multiplicación (010):__ En cuanto a la multiplicación, esta se ejecuta cuando se cumple que *op = 010*. En este caso, la entrada *init* debe tener un valor lógico alto para iniciar el algoritmo de multiplicación, el cual es igual al implementado en la práctica previa [_"Multiplicador de 3 bits usando máquina de Estados"_](https://github.com/digital-electronics-UNAL/lab01-g2-e1-1/tree/main), pero extendido a 4 bits de entrada tanto en A como en B.
+b. __Multiplicación (010):__ En cuanto a la multiplicación, esta se ejecuta cuando se cumple que *op = 010*. En este caso, la entrada *init* debe tener un valor lógico alto para iniciar el algoritmo de multiplicación, el cual es igual al implementado en la práctica previa [_"Multiplicador de 3 bits usando máquina de Estados"_](https://github.com/digital-electronics-UNAL/lab01-g2-e1-1/tree/main), pero extendido a 4 bits de entrada tanto en A como en B.
 
 Durante esta operación, se activa la bandera *zero* de la misma forma descrita en la operación de suma/resta, y la bandera *overflow* se activa si el bit más significativo del registro de resultado es igual a 1 (result[7] = 1), ya que esto indica que el producto obtenido requiere un bit adicional más allá de los 7 disponibles en el registro result. Finalmente, la señal *done* se activa una vez finaliza correctamente la operación de multiplicación.
 
+c. __Desplazamiento a la izquierda (011):__ Continuando con las operaciones, cuando *op = 011*, la función ejecutada por la ALU corresponde al desplazamiento. En este caso, la entrada de 4 bits A representa el número binario que se desea desplazar, mientras que la entrada B indica la cantidad de posiciones **hacia la izquierda** que se realizará dicho desplazamiento. Una vez completada la operación, las banderas *zero* y *done* se comportan de la misma manera que en las operaciones previamente descritas, activándose si el resultado es igual a cero o si la operación finaliza correctamente, respectivamente.
+
+d. __Operación lógica *AND* (111):__ Finalmente, cuando el selector toma el valor *op = 111*, la ALU ejecuta la operación lógica AND bit a bit entre los 4 bits de A y los de B. Tras realizar esta operación, se verifica nuevamente la condición de la bandera *zero* en el registro de resultado y se activa la señal *done* para indicar la finalización exitosa de la operación.
+
 - ### Tabla de operaciones 
+
+La tabla a continuación muestra la operación realizada a través de la Unidad Aritmético-Lógica, en donde el selector corresponde a un multiplexor que brindará la salida de la operación seleccionada por el usuario:
 
 | Número del selector | Operación realizada |
 |:----------:|:----------:|
