@@ -56,21 +56,6 @@ c. __Desplazamiento a la izquierda (011):__ Continuando con las operaciones, cua
 
 d. __Operación lógica *AND* (111):__ Finalmente, cuando el selector toma el valor *op = 111*, la ALU ejecuta la operación lógica AND bit a bit entre los 4 bits de A y los de B. Tras realizar esta operación, se verifica nuevamente la condición de la bandera *zero* en el registro de resultado y se activa la señal *done* para indicar la finalización exitosa de la operación.
 
-- ### Tabla de operaciones 
-
-La tabla a continuación muestra la operación realizada a través de la Unidad Aritmético-Lógica, en donde el selector corresponde a un multiplexor que brindará la salida de la operación seleccionada por el usuario:
-
-<div align="center">
-
-| **Número del selector** | **Operación realizada** |
-|:----------:|:----------:|
-| 000, 100, 101, 110     | Nada     |
-| 001    | Suma (Cin = 0) / Resta (Cin = 1) |
-| 010     | Multiplicación    |
-| 011     | Desplazamiento (Izquierda)     |
-| 111    | Operación lógica (AND)    |
-
-</div>
 
  - ### Diagrama de caja negra (RTL)
 
