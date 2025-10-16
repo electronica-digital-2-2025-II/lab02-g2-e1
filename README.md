@@ -173,7 +173,10 @@ Se ha hecho uso de uno de los botones de la FPGA (Sch=btn[3]) para activar la se
 Para acceder a la explicación del [funcionamiento de la Unidad Aritmético-Lógica](https://www.youtube.com/watch?v=Qb5SZ17YCY4) en YouTube, haga clic en el siguiente enlace en la miniatura del video:
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=Qb5SZ17YCY4">
+  <a href="https://www.youtube.com/watch?v=Qb5SZ17YCY4" target="_blank">
+    <img src="https://img.youtube.com/vi/Qb5SZ17YCY4/0.jpg" alt="Explicación de la Unidad Aritmético-Lógica" style="width:480px; border: 2px solid #ccc; border-radius: 8px;">
+  </a>
+</p>
 	
 ## Conclusiones
 
