@@ -28,19 +28,20 @@ Una ALU (Unidad Aritmético-Lógica) es un bloque fundamental de los sistemas di
 
 Con respecto a la ALU implementada en la práctica, esta cuenta con cinco operaciones posibles: **suma**, **resta**, **multiplicación**, **desplazamiento** (a la izquierda) y la operación lógica **AND**. En la siguiente sección se profundizará en la codificación de estas operaciones según el selector de un multiplexor de 3 bits de entrada.
 
-Las entradas de la ALU corresponden a los dos números a operar, **A** y **B**, cada uno de 4 bits, un **selector** de 3 bits para determinar la operación a realizar, un bit de **init**, que cumple la función de reset y además inicia el algoritmo de multiplicación, y un **carry in**, encargado de controlar si se realiza una suma o una resta mediante el full adder.
+Las entradas de la ALU corresponden a los dos números a operar, **A** y **B**, cada uno de 4 bits, un **selector** de 3 bits para determinar la operación a realizar, un bit de **init**, que cumple la función de reset y además inicia el algoritmo de multiplicación, y un **carry in**, encargado de controlar si se realiza una suma o una resta mediante el full adder. En la sección posterior se indicará como trabajan las operaciones de forma más detallada.
 
 En cuanto a las salidas, se tienen 7 bits destinados a presentar el **resultado** de la operación, un bit de **carry out** (empleado cuando el resultado de una suma requiere más de 4 bits), un bit de **overflow** (para indicar que el resultado de la multiplicación excede los 7 bits disponibles), y un bit para la bandera **zero**, que se activa cuando el resultado es cero. Esta bandera también se activa cuando no se selecciona ninguna operación, es decir, cuando el selector no corresponde a ninguna de las operaciones codificadas, permitiendo así indicar al usuario que debe elegir una operación válida. Finalmente, se añadió una salida **done**, que señala que la operación seleccionada por el usuario ha finalizado correctamente.
 
 
 ### Diagrama
- a. Diagrama de flujo
+
+ - ### Diagrama de flujo 
 
 <p align="center">
 <img width="830" height="830" alt="Diagrama en blanco - Página 9" src="https://github.com/user-attachments/assets/eb11dca6-9324-4535-bf58-7b140cd96080" />
 </p> 
 
- b. Tabla de operaciones
+- ### Tabla de operaciones 
 
 | Número del selector | Operación realizada |
 |:----------:|:----------:|
@@ -49,6 +50,8 @@ En cuanto a las salidas, se tienen 7 bits destinados a presentar el **resultado*
 | 010     | Multiplicación    |
 | 011     | Desplazamiento (Izquierda)     |
 | 111    | Operación lógica (AND)    |
+
+ - ### Diagrama de caja negra (RTL)
 
 ## Simulaciones 
 
