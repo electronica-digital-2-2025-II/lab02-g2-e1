@@ -61,6 +61,10 @@ d. __Operación lógica *AND* (111):__ Finalmente, cuando el selector toma el va
 
 El diagrama RTL presentado a continuación muestra de manera general la interconexión entre los distintos módulos que componen el diseño. En él se pueden observar claramente las entradas y salidas principales del sistema, así como la forma en que se obtiene el resultado final mediante el uso de un multiplexor:
 
+<p align="center">
+<img width="13125" height="9375" alt="ALU2-1" src="https://github.com/user-attachments/assets/58178b7b-2ff5-4f66-913d-f95c24886477" />
+</p> 
+
 ## Simulaciones 
 
 Las simulaciones realizadas se presentan en las siguientes imagenes, en donde a través de GTKWave evidencia el comportamiento de la de las distintas operaciones de la ALU con el respectivo [testbench](scr/alu_tb.v).
