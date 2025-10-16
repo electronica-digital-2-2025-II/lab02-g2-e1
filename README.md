@@ -60,6 +60,8 @@ d. __Operación lógica *AND* (111):__ Finalmente, cuando el selector toma el va
 
 La tabla a continuación muestra la operación realizada a través de la Unidad Aritmético-Lógica, en donde el selector corresponde a un multiplexor que brindará la salida de la operación seleccionada por el usuario:
 
+<div align="center">
+
 | Número del selector | Operación realizada |
 |:----------:|:----------:|
 | 000, 100, 101, 110     | Nada     |
@@ -67,6 +69,8 @@ La tabla a continuación muestra la operación realizada a través de la Unidad 
 | 010     | Multiplicación    |
 | 011     | Desplazamiento (Izquierda)     |
 | 111    | Operación lógica (AND)    |
+
+</div>
 
  - ### Diagrama de caja negra (RTL)
 
