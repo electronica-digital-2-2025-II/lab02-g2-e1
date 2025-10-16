@@ -62,8 +62,16 @@ d. __Operación lógica *AND* (111):__ Finalmente, cuando el selector toma el va
 El diagrama RTL presentado a continuación muestra de manera general la interconexión entre los distintos módulos que componen el diseño. En él se pueden observar claramente las entradas y salidas principales del sistema, así como la forma en que se obtiene el resultado final mediante el uso de un multiplexor:
 
 <p align="center">
-<img width="13125" height="9375" alt="ALU2-1" src="https://github.com/user-attachments/assets/58178b7b-2ff5-4f66-913d-f95c24886477" />
+<img width="13125" height="9375" alt="ALU2-1" src="https://github.com/user-attachments/assets/34c4dfc0-eb18-4c57-99d0-2b58f2446719" />
 </p> 
+
+Se evidencian las 5 entradas principales del sistema, *A* y *B*, cada una de 4 bits, *op* de 3 bits, además de las señales de control *init*, *Cin* y *Clk*. En el caso del sumador/restador, se utiliza un registro a la salida para combinar el resultado de la operación con el bit de *carry out*, formando así una palabra de 5 bits. Esta salida se envía al multiplexor de resultado, el cual cuenta con una salida total de 7 bits. Los bits restantes se rellenan con ceros para mantener un mismo número de bits para todas las operaciones. Adicionalmente, la salida del sumador está directamente conectada a la salida carry de la ALU, permitiendo indicar al usuario el valor lógico final del carry generado en el sumador.
+
+Por otro lado, en el multiplicador, debido a que la operación genera una salida de 8 bits, se emplea un registro para almacenar el resultado completo. De este registro, los 7 bits menos significativos se envían al multiplexor correspondiente a la entrada *op = 010*, mientras que el bit más significativo (result[7]) se conecta directamente a la salida overflow, ya que este indica si el producto excede la capacidad de representación del resultado de la ALU.
+
+Tanto el desplazamiento como la operación lógica AND presentan salidas de 7 bits directamente conectadas al multiplexor principal, sin necesidad de registros intermedios, y después del multiplexor se almacena el resultado en un registro final.
+
+Finalmente, cada uno de los módulos cuenta con una salida done, las cuales se conectan a una compuerta OR de 4 bits, de manera que cuando cualquiera de las operaciones finaliza correctamente, se activa la salida done general de la ALU. En cuanto a la bandera zero, se implementó un comparador que evalúa el valor presente en la salida del multiplexor, si resultado = 0, se activa dicha bandera, indicando que la operación ejecutada produjo un resultado nulo.
 
 ## Simulaciones 
 
