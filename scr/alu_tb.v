@@ -19,7 +19,7 @@ module alu_tb;
     wire zero;
 
     // Instancia del módulo ALU
-    alu uut (
+    alu dut (
         .clk(clk),
         .a(a),
         .b(b),
