@@ -73,6 +73,22 @@ Tanto el desplazamiento como la operación lógica AND presentan salidas de 7 bi
 
 Finalmente, cada uno de los módulos cuenta con una salida done, las cuales se conectan a una compuerta OR de 4 bits, de manera que cuando cualquiera de las operaciones finaliza correctamente, se activa la salida done general de la ALU. En cuanto a la bandera zero, se implementó un comparador que evalúa el valor presente en la salida del multiplexor, si resultado = 0, se activa dicha bandera, indicando que la operación ejecutada produjo un resultado nulo.
 
+- ### Tabla de operaciones 
+
+La tabla a continuación muestra la operación realizada a través de la Unidad Aritmético-Lógica, en donde el selector corresponde a un multiplexor que brindará la salida de la operación seleccionada por el usuario:
+
+<div align="center">
+
+| **Número del selector** | **Operación realizada** |
+|:----------:|:----------:|
+| 000, 100, 101, 110     | Nada     |
+| 001    | Suma (Cin = 0) / Resta (Cin = 1) |
+| 010     | Multiplicación    |
+| 011     | Desplazamiento (Izquierda)     |
+| 111    | Operación lógica (AND)    |
+
+</div>
+
 ## Simulaciones 
 
 Las simulaciones realizadas se presentan en las siguientes imagenes, en donde a través de GTKWave evidencia el comportamiento de la de las distintas operaciones de la ALU con el respectivo [testbench](scr/alu_tb.v).
