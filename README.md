@@ -24,6 +24,8 @@ Indice:
 
 ### Descripción
 
+Una ALU (Arithmetic/Logic Unit) es un bloque fundamental de los sistemas digitales que realiza operaciones aritméticas y lógicas sobre datos binarios. Combina funciones como suma, resta, operaciones lógicas (AND, OR, NOT, entre otras), comparaciones y desplazamientos, controladas por una señal de control que indica qué operación ejecutar. Recibe dos entradas de N bits (A y B), junto con señales de control que determinan la función a realizar, y produce una salida Y también de N bits, además de posibles señales adicionales como Cout (acarreo) o **banderas de estado** (flags), que proporcionan información adicional sobre el resultado. Por ejemplo, una bandera de **overflow** flag indica que ocurrió un desbordamiento en la operación aritmética, mientras que una bandera de **zero** señala que el resultado obtenido fue cero. [1]
+
 ### Diagrama
  a. Diagrama de flujo
 
@@ -132,3 +134,4 @@ Para acceder a la explicación del [funcionamiento de la Unidad Aritmético-Lóg
 ## Conclusiones
 
 ## Referencias
+[1] D. M. Harris and S. L. Harris, Digital Design and Computer Architecture, 2nd ed., Chapter 5, Section 5.2.4, Morgan Kaufmann, 2012.
