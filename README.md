@@ -166,5 +166,13 @@ Para acceder a la explicación del [funcionamiento de la Unidad Aritmético-Lóg
 
 ## Conclusiones
 
+- La implementación de la Unidad Aritmético-Lógica (ALU) permitió comprender de forma práctica cómo se integran distintos módulos combinacionales y secuenciales dentro de un sistema digital complejo, reforzando los conceptos de diseño modular y jerárquico en Verilog.
+  
+- El análisis y simulación de las operaciones realizadas mediante el [testbench](scr/alu_tb.v), evidenciaron el funcionamiento correcto de cada bloque, verificando el comportamiento en conjunto entre las señales de control (init, done, Cin) y las banderas de estado (carry out, overflow, zero).
+
+- Se demostró la importancia del multiplexor como elemento de control central, al permitir seleccionar al usuario entre diferentes operaciones aritméticas y lógicas con base en un único selector de 3 bits.
+
+- Finalmente, la implementación en la FPGA Zybo Z7 permitió validar de manera física el diseño desarrollado, mostrando la correspondencia entre el comportamiento simulado y el real, y resaltando la importancia de una correcta descripción del hardware.
+
 ## Referencias
 [1] D. M. Harris and S. L. Harris, Digital Design and Computer Architecture, 2nd ed., Chapter 5, Section 5.2.4, Morgan Kaufmann, 2012.
